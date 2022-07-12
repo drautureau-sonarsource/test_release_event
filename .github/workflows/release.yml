@@ -1,0 +1,14 @@
+name: sonar-release
+# This workflow is triggered when publishing a new github release
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    name: Release
+    steps:
+      - run: |
+          cat "${GITHUB_EVENT_PATH}"
